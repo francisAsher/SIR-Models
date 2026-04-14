@@ -1,10 +1,3 @@
-# Population(N) : 10,000
-# Initial infected (IO) : 10
-# Initial recovered (RO_initial) : 0
-# Initial susceptible (SO): 9,990
-# Transmission rate (beta) : 0.30
-# Recovery rate (gamma) : 0.20
-
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
@@ -14,8 +7,8 @@ IO = 10
 RO_initial = 0
 SO = N - IO - RO_initial
 
-beta = 0.30
-gamma = 0.20
+beta = 3 / 10
+gamma = 1 / 5
 
 RO = beta / gamma
 print('RO', RO)
