@@ -48,7 +48,7 @@ Rt = RO * (S / N)
 plt.figure(figsize=(10, 6))
 
 plt.plot(t, S, label='Susceptible')
-plt.plot(t, E, label='Exposed')
+plt.plot(t, E, label='Exposed', color= '#5d5078')
 plt.plot(t, I, label='Infected')
 plt.plot(t, R, label='Recovered')
 
