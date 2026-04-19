@@ -1,17 +1,14 @@
 # SEIR Models for Infectious Diseases
 
 ## Overview
-This repository contains SIR models for influenza and measles.
-
-## Model Description
-The SIR model divides the population into:
+This repository contains SEIR models for influenza and measles.
 - S: Susceptible
 - E: Exposed
 - I: Infected
 - R: Recovered
 
 ## Parameters
-- β (beta): infection rate
+- β (beta): infection/transmission rate
 - γ (gamma): recovery rate
 - sigma: latent rate 
 
@@ -31,25 +28,29 @@ On a student returning from travel infected with measles
 
 ## For Influenza
 Population(N) : 10,000
+Initial exposed people : 0
 Initial infected (IO): 10
 Initial recovered (RO_initial) : 0
-Initial susceptible (SO): 9,990
-Transmission rate (beta): 0.30
-Recovery rate (gamma): 0.20
+Initial susceptible (SO): 9,990 (S0 = N - E0 - I0 - RO_initial) 
+Transmission rate (beta): 3 / 10
+Recovery rate (gamma): 1 / 5
+latent rate (sigma) : 1 / 2
 
-##R0 the basic reproduction number (how an infected person infects other susceptible)
+
+##R0 the basic reproduction number (how an infected person infects susceptible)
 #When R < 1 = epidemic gradually reduces and dies out 
 #when R > 1 = epidemic spread
 #we plot Rt (effective reproduction number); which shows how RO increases with time 
 
 ## Equations
-dS/dt = -βSI  
-dI/dt = βSI - γI  
-dR/dt = γI  
+dSdt = -beta * S * I / N
+dEdt = beta * S * I / N - sigma * E
+dIdt = sigma * E - gamma * I
+dRdt = gamma * I
 
 ## Files
-influenza.py → influenza simulation
-measles.py → measles simulation
+influenza.py -- influenza simulation
+measles.py -- measles simulation
 
 ## Interpretation
-The model shows how diseases spread and stabilize over time depending on transmission and recovery rates.
+The model shows how diseases spread and stabilize over time depending on transmission, recovery rates and latent rates. 
