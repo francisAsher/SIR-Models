@@ -53,4 +53,11 @@ influenza.py -- influenza simulation
 measles.py -- measles simulation
 
 ## Interpretation
-The model shows how diseases spread and stabilize over time depending on transmission, recovery rates and latent rates. 
+The model shows how diseases spread and stabilize over time depending on transmission, recovery rates and latent rates.
+
+##Explaining the different model (influenza_improved.py)
+Three different age groups = three suceptible cases = N1, N2, N3
+C = Contact matrix (number of times of the population are likely to get into contact)
+lambda = how contagious the disease is (how fast the susceptible are getting infected)
+
+
